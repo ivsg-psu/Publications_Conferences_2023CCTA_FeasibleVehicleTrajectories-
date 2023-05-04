@@ -9,26 +9,26 @@ Search for this, and you will find!
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <!-- <a href="https://github.com/ivsg-psu/FeatureExtraction_Association_PointToPointAssociation">
+  <!-- <a href="https://github.com/ivsg-psu/Publications_Conferences_2023CCTA_FeasibleVehicleTrajectories">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-  <h2 align="center"> Analysis of Friction Utilization Within a Roadway Network Using Simulated Vehicle Trajectories
+  <h2 align="center"> Synthesizing Feasible Vehicle Trajectories from Microscopic Traffic Simulations
   </h2>
 
 <p align="center"><img src=".\Images\Friction_Analysis_Map_No_LC.jpg" alt="Friction Utilization Map" width="800" height="500">
 
   <p align="center">
-    The purpose of this code is to create a friction utilization map of the State College road network in the manuscript "Analysis of Friction Utilization Within a Roadway Network Using Simulated Vehicle Trajectories".
+    This code is capable of providing physically realistic chassis data for individual vehicles operating in larger road networks with network-scale interactions between vehicles, as explained in the manuscript "Synthesizing Feasible Vehicle Trajectories from Microscopic Traffic Simulations".
     <br />
-    <a href="https://github.com/ivsg-psu/FeatureExtraction_Association_PointToPointAssociation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ivsg-psu/Publications_Conferences_2023CCTA_FeasibleVehicleTrajectories"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ivsg-psu/FeatureExtraction_Association_PointToPointAssociation/tree/main/Documents">View Demo</a>
+    <a href="https://github.com/ivsg-psu/Publications_Conferences_2023CCTA_FeasibleVehicleTrajectories/tree/main/Documents">View Demo</a>
     ·
-    <a href="https://github.com/ivsg-psu/FeatureExtraction_Association_PointToPointAssociation/issues">Report Bug</a>
+    <a href="https://github.com/ivsg-psu/Publications_Conferences_2023CCTA_FeasibleVehicleTrajectories/issues">Report Bug</a>
     ·
-    <a href="https://github.com/ivsg-psu/FeatureExtraction_Association_PointToPointAssociation/issues">Request Feature</a>
+    <a href="https://github.com/ivsg-psu/Publications_Conferences_2023CCTA_FeasibleVehicleTrajectories/issues">Request Feature</a>
   </p>
 </p>
 
@@ -54,10 +54,7 @@ Search for this, and you will find!
     </li>
     <li><a href="#usage">Usage</a></li>
 	    <ul>
-	    <li><a href="#Generate-the-friction-utilization-data-for-the-State-College-road-network">Generate the friction utilization data for the State College road                    network</li>
-	    </ul>
-	    <ul>
-	    <li><a href="#Generate-the-friction-utilization-map-of-the-State-College-road-network">Generate the friction utilization map of the State College road network</li>
+	    <li><a href="#Generate-plots-of-a-vehicle-ID-on-a-specific-section-ID">Generate plots of a vehicle ID on a specific section ID</li>
 	    </ul>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -67,9 +64,7 @@ Search for this, and you will find!
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-In a road network, differences in road geometry, traffic patterns, and traffic laws require a range of typical maneuvers, each of which strongly affects the vehicle’s expected friction utilization. For example, very little tire force is required for driving straight on a low-speed road at a constant speed, performing no lane change maneuvers. Conversely, large tire forces may be required to navigate sharp highway curves, to stay in lane during sudden changes in lane offsets in a construction zone, or to stop abruptly from free-flow speed at a traffic light. Therefore, maps of this likely utilization are extremely valuable because they would reveal geolocations within a road network that require little relative friction utilization, and locations of large friction utilization. Such maps then may be useful to warn human drivers against lane changes on wet highway curves, to guide autonomous driving and/or driver assist algorithms toward geo-appropriate maneuver choices, or to modify as a function of weather the posted speed limits at road network locations whose normal maneuvering speed might violate friction limits. 
-
-The goal of this paper is to predict the areas of large friction utilization within a traffic network by using recorded vehicle trajectories. These trajectories are used as reference paths within a simulation of chassis dynamics along with a steering algorithm to predict the friction utilization as a function of road location. The friction utilization values are then mapped to geolocations to identify zones where friction utilization is largest. Knowing these locations allows the planning of maneuvers by both drivers and driving algorithms such that friction margins are maintained. The results show that, within a typical traffic network, there are significant and very highly localized areas where large friction utilization is typical.
+Simulating a vehicle’s motion within a road network has many applications, including autonomous vehicle development and transportation planning. These simulations are expected to include not only predictions of an ego vehicle’s behavior, but also interactions with other vehicles, changing rules-of-road, and environmental factors. Some of these interactions are best predicted by vehicle chassis models and simulations, such as the friction utilization of a vehicle on a roadway in changing weather. However, other interactions, such as between vehicles and the rules-of-road or between the ego vehicle and other large groups of vehicles, are best predicted by traffic simulations. As well, the management of data between traffic and chassis simulations can be difficult due to the large number of vehicles and geographic scale in which they operate. There is a need for methods to integrate these toolsets with each other to where the synergistic function of the tools achieves research needs. This paper identifies a particular gap in functionality between traffic simulations and chassis simulations: that traffic simulations predict infeasible vehicle trajectories from the standpoint of vehicle chassis behavior. This study proposes solutions, and the adapted hybrid simulation method is shown to be capable of providing physically realistic chassis data for individual vehicles operating in larger road networks with network-scale interactions between vehicles.
 
 
 <!-- GETTING STARTED -->
@@ -83,7 +78,7 @@ To get a local copy up and running follow these simple steps.
 
 2. Clone the repo
    ```sh
-   git clone https://github.com/ivsg-psu/Publications_Conferences_2023CCTA_RoadNetworkFrictionAnalysis
+   git clone https://github.com/ivsg-psu/Publications_Conferences_2023CCTA_FeasibleVehicleTrajectories
    ```
 3. Download the datafiles from <a href="https://pennstateoffice365.sharepoint.com/sites/IntelligentVehiclesandSystemsGroup-Active/Shared%20Documents/Forms/AllItems.aspx?ga=1&id=%2Fsites%2FIntelligentVehiclesandSystemsGroup%2DActive%2FShared%20Documents%2FIVSG%2FGitHubMirror%2FPublications%2FConferences%2F2023%2FPublications%5FConferences%5F2023CCTA%5FRoadNetworkFrictionAnalysis&viewid=aa025233%2D06cc%2D49ea%2Dbed2%2Db847e0f89798"><strong>psu-ivsg data cetner</strong></a> into the /Data folder. 
 
@@ -92,12 +87,9 @@ To get a local copy up and running follow these simple steps.
 The following are the top level directories within the repository:
 <ul>
 	<li>/Documents folder: Paper manuscript and code description.</li>
-	<li>/DB Lib folder: Database library with functions used by the code repository.</li>
-	<li>/MinMaxMean folder: Min, max, and mean tracking function used by the code repository.</li>
 	<li>/Path Lib folder: Path following library with functions used by the code repository.</li>
 	<li>/UTM Lib folder: UTM library with functions used by the code repository.</li>
 	<li>/VD Lib folder: Vehicle dynamics library with functions used by the code repository.</li>
-	<li>/Data folder: Data files used by the code repository.</li>
 	<li>/Images folder: Images generated by the code.</li>
 </ul>
 
@@ -107,25 +99,39 @@ The following are the top level directories within the repository:
 <!-- Use this space to show useful examples of how a project can be used.
 Additional screenshots, code examples and demos work well in this space. You may
 also link to more resources. -->
-### Generate the friction utilization data for the State College road network
-** Please note: This main script cannot run without access and connection to the database hosted by Penn State University, which unfortunately, cannot be provided. However, if you would like to run this script with connection to your own database, you will need to change the database parameters. 
-1. Download the datafiles from <a href="https://pennstateoffice365.sharepoint.com/sites/IntelligentVehiclesandSystemsGroup-Active/Shared%20Documents/Forms/AllItems.aspx?ga=1&id=%2Fsites%2FIntelligentVehiclesandSystemsGroup%2DActive%2FShared%20Documents%2FIVSG%2FGitHubMirror%2FPublications%2FConferences%2F2023%2FPublications%5FConferences%5F2023CCTA%5FRoadNetworkFrictionAnalysis&viewid=aa025233%2D06cc%2D49ea%2Dbed2%2Db847e0f89798"><strong>psu-ivsg data cetner</strong></a> into the /Data folder. 
-2. Run the main script:
-```sh
-   script_estimateAccelForSmoothTrafficTrajSCE_RCL_3DoFPPC.m
-   ```
-### Generate the friction utilization map of the State College road network
-1. Download the datafiles from <a href="https://pennstateoffice365.sharepoint.com/sites/IntelligentVehiclesandSystemsGroup-Active/Shared%20Documents/Forms/AllItems.aspx?ga=1&id=%2Fsites%2FIntelligentVehiclesandSystemsGroup%2DActive%2FShared%20Documents%2FIVSG%2FGitHubMirror%2FPublications%2FConferences%2F2023%2FPublications%5FConferences%5F2023CCTA%5FRoadNetworkFrictionAnalysis&viewid=aa025233%2D06cc%2D49ea%2Dbed2%2Db847e0f89798"><strong>psu-ivsg data cetner</strong></a> into the /Data folder. 
 
-2. Run the main script:
+### Generate plots of a vehicle ID on a specific section ID
+1. Download the datafiles from <a href=""><strong>psu-ivsg data center</strong></a> into the /Data folder. 
 
+2. In the main script, set the variables 'section_ID' and 'vehicle_ID'
    ```sh
-   script_visualizeFrictionDemandForTraffic.m
+   script_createRealisticTrajectories_SCE_3DoFPPC.m
    ```
-You may change the various flag triggers to plot different data.
-- Plot the minimum, maximum, or mean
-- Plot the front left tire, the front right tire, the rear left tire, or the rear right tire
-
+   Reference trajectory data has been provided for 8 section IDs:
+   Section 3905:
+   - Set vehicle_id = 2 to analyze a lane change trajectory
+   - Set vehicle_id = 3 to analyze a no lane change trajectory
+   Section 8242:
+   - Set vehicle_id = 2 to analyze a lane change trajectory
+   - Set vehicle_id = 3 to analyze a no lane change trajectory
+   Section 8859: Arterial driving, Route 322 Offramp
+   - Set vehicle_id = 2 to analyze a lane change trajectory
+   - Set vehicle_id = 3 to analyze a no lane change trajectory
+   Section 8860:
+   - Set vehicle_id = 2 to analyze a lane change trajectory
+   - Set vehicle_id = 3 to analyze a no lane change trajectory
+   Section 8938: Highway driving, Interstate 99
+   - Set vehicle_id = 2 to analyze a lane change trajectory
+   - Set vehicle_id = 3 to analyze a no lane change trajectory
+   Section 14479:
+   - Set vehicle_id = 2 to analyze a lane change trajectory
+   - Set vehicle_id = 3 to analyze a no lane change trajectory
+   Section 19343: Urban driving, traffic light intersection in downtown State College
+   - Set vehicle_id = 2 to analyze a lane change trajectory
+   - Set vehicle_id = 3 to analyze a no lane change trajectory
+   Section 37162: Urban driving, traffic light intersection with 4 lanes of traffic
+   - Set vehicle_id = 2 to analyze a lane change trajectory
+   - Set vehicle_id = 3 to analyze a no lane change trajectory
 
 <!-- LICENSE -->
 ## License
