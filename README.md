@@ -15,9 +15,7 @@ Search for this, and you will find!
 
   <h2 align="center"> Synthesizing Feasible Vehicle Trajectories from Microscopic Traffic Simulations
   </h2>
-
-<p align="center"><img src=".\Images\Friction_Analysis_Map_No_LC.jpg" alt="Friction Utilization Map" width="800" height="500">
-
+  
   <p align="center">
     This code is capable of providing physically realistic chassis data for individual vehicles operating in larger road networks with network-scale interactions between vehicles, as explained in the manuscript "Synthesizing Feasible Vehicle Trajectories from Microscopic Traffic Simulations".
     <br />
